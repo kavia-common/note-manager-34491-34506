@@ -1,40 +1,31 @@
-# Welcome to Remix!
+# Notes Frontend (Remix)
 
-- 📖 [Remix docs](https://remix.run/docs)
+A simple notes UI built with Remix + Vite and Tailwind, styled with the Ocean Professional theme.
 
-## Development
+Features:
+- Sidebar with search
+- Create, view, edit, delete notes
+- Client-side persistence via localStorage
+- Clean, modern UI with subtle shadows and gradients
 
-Run the dev server:
+Getting started:
+1. Install dependencies: npm install
+2. Run the dev server: npm run dev
+3. Open http://localhost:3000
 
-```shellscript
-npm run dev
-```
+Build and run production:
+- npm run build
+- npm start
 
-## Deployment
+Notes storage:
+- Notes are persisted in the browser using localStorage under key "remix.notes.v1".
+- No backend is required.
 
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+Project structure:
+- app/routes/notes.tsx: Layout with sidebar + Outlet
+- app/routes/notes._index.tsx: Empty state
+- app/routes/notes.$noteId.tsx: Editor for a note
+- app/routes/notes.new.tsx: New note composer
+- app/utils/notes.client.ts: localStorage-backed notes api
+- app/components: Sidebar, Editor, NoteListItem
+- app/styles/theme.css: Ocean Professional theme tokens
